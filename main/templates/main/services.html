@@ -1,0 +1,203 @@
+{% extends "includes/base.html" %}
+{% load static %}
+
+{% block title %}
+    Services
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+     <!-- Services Page -->
+    <!-- Hero Section -->
+    <section id="services-hero" class="relative h-[500px] overflow-hidden">
+        <div class="absolute inset-0">
+          <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/404cbb7f09-52c98bff74e0b36b3cee.png" alt="modern optometry clinic interior with advanced equipment, clean minimal design, luxury finishes" />
+          <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/90 to-black/70"></div>
+        </div>
+        <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+          <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Comprehensive Eye Care Services</h1>
+            <p class="text-xl text-white/90 mb-8">Experience the perfect blend of advanced technology and personalized care</p>
+            <a href="{% url 'main:home' %}#booking"> <button class="px-8 py-4 bg-white text-indigo-950 rounded-full hover:bg-indigo-50 transition duration-300 font-medium">Schedule an Appointment</button></a>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Main Services Grid -->
+      <section id="main-services" class="py-20">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Discover our range of professional eye care services designed to meet all your vision needs</p>
+          </div>
+    
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Eye Examination Card -->
+            <div id="service-eye-exam" class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition duration-300">
+              <div class="h-64 overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8fef24b90a-09e6d8b95e3b3e4fb07f.png" alt="optometrist performing eye examination with modern equipment, professional setting" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Comprehensive Eye Examination</h3>
+                <p class="text-gray-600 mb-6">Thorough assessment of your vision and eye health using state-of-the-art technology</p>
+                <ul class="space-y-3 mb-8">
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Visual acuity testing
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Digital retinal imaging
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Glaucoma screening
+                  </li>
+                </ul>
+                <button class="w-full py-3 bg-indigo-950 text-white rounded-full hover:bg-indigo-900 transition duration-300">Book Examination</button>
+              </div>
+            </div>
+    
+            <!-- Contact Lens Fitting -->
+            <div id="service-contact-lens" class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition duration-300">
+              <div class="h-64 overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/575b18da4a-49e64e68935be698dc63.png" alt="contact lens fitting consultation, close up of eye examination" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Contact Lens Services</h3>
+                <p class="text-gray-600 mb-6">Expert fitting and consultation for all types of contact lenses</p>
+                <ul class="space-y-3 mb-8">
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Customized fitting
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Specialty lenses
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Training session
+                  </li>
+                </ul>
+                <button class="w-full py-3 bg-indigo-950 text-white rounded-full hover:bg-indigo-900 transition duration-300">Schedule Fitting</button>
+              </div>
+            </div>
+    
+            <!-- Frame Styling -->
+            <div id="service-frame-styling" class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition duration-300">
+              <div class="h-64 overflow-hidden relative">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition duration-500" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/8b833a5004-817a6e39f3c559945e1f.png" alt="luxury eyewear display with professional stylist helping customer" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div class="p-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Frame Styling</h3>
+                <p class="text-gray-600 mb-6">Personal styling session with our expert frame consultants</p>
+                <ul class="space-y-3 mb-8">
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Style consultation
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Frame adjustments
+                  </li>
+                  <li class="flex items-center text-gray-600">
+                    <i class="fa-solid fa-check text-green-500 mr-3"></i>
+                    Designer selection
+                  </li>
+                </ul>
+                <button class="w-full py-3 bg-indigo-950 text-white rounded-full hover:bg-indigo-900 transition duration-300">Book Styling</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Specialty Services -->
+      <section id="specialty-services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-gray-900 mb-16 text-center">Specialty Services</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+              <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-child text-indigo-800 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Pediatric Eye Care</h3>
+              <p class="text-gray-600">Specialized care for children's vision development and eye health</p>
+            </div>
+    
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+              <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-laptop-medical text-indigo-800 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Eye Strain</h3>
+              <p class="text-gray-600">Solutions for computer vision syndrome and digital fatigue</p>
+            </div>
+    
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+              <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-glasses text-indigo-800 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Sports Vision</h3>
+              <p class="text-gray-600">Specialized eyewear and vision training for athletes</p>
+            </div>
+    
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300">
+              <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4">
+                <i class="fa-solid fa-eye text-indigo-800 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Vision Therapy</h3>
+              <p class="text-gray-600">Customized exercises to improve visual skills and processing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Insurance Section -->
+      <section id="insurance" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Insurance & Payment</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">We work with most major insurance providers to help you maximize your benefits</p>
+          </div>
+    
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="p-6 bg-gray-50 rounded-xl text-center">
+              <i class="fa-regular fa-credit-card text-4xl text-indigo-800 mb-4"></i>
+              <h3 class="font-bold text-gray-900">Flexible Payment</h3>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-xl text-center">
+              <i class="fa-solid fa-shield-heart text-4xl text-indigo-800 mb-4"></i>
+              <h3 class="font-bold text-gray-900">Insurance Coverage</h3>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-xl text-center">
+              <i class="fa-solid fa-file-invoice-dollar text-4xl text-indigo-800 mb-4"></i>
+              <h3 class="font-bold text-gray-900">Direct Billing</h3>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-xl text-center">
+              <i class="fa-solid fa-percent text-4xl text-indigo-800 mb-4"></i>
+              <h3 class="font-bold text-gray-900">Special Offers</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- CTA Section -->
+      <section id="services-cta" class="py-20 bg-indigo-950">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-8">Ready to Experience Better Vision?</h2>
+            <p class="text-xl text-white/90 mb-12">Schedule your appointment today and take the first step towards optimal eye health</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="{% url 'main:home' %}#booking">  <button class="px-8 py-4 bg-white text-indigo-950 rounded-full hover:bg-indigo-50 transition duration-300">Book Appointment</button></a>
+            <a href="{% url 'main:contact' %}"> <button class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full hover:bg-white/10 transition duration-300">Contact Us</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+{% endblock %}  

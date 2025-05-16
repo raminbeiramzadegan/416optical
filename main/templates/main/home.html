@@ -1,0 +1,561 @@
+{% extends "includes/base.html" %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block content %}
+
+  
+<section id="hero" class="relative w-full h-[700px] overflow-hidden">
+    <div class="absolute inset-0">
+      <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/65f073acba-f6b67dcca558fb2e93ae.png" alt="modern optical store interior with stylish eyewear displays, soft lighting, elegant design, high-end optical shop" />
+      <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/70 to-black/40"></div>
+    </div>
+    <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">See the World in Perfect Clarity</h1>
+        <p class="text-xl text-white/90 mb-8">Experience premium eyewear and exceptional eye care at Toronto's most trusted optical destination.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#booking" >
+          <span class="bg-amber-500 hover:bg-amber-400 text-white px-8 py-3 rounded-full text-center transition duration-300 transform hover:scale-105 font-medium cursor-pointer">
+            Book Your Eye Exam
+          </span>
+        </a>
+    
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-6 left-0 right-0 flex justify-center">
+      <div class="flex space-x-2">
+        <span class="h-2 w-6 bg-amber-500 rounded-full"></span>
+        <span class="h-2 w-2 bg-white/50 rounded-full"></span>
+        <span class="h-2 w-2 bg-white/50 rounded-full"></span>
+      </div>
+    </div>
+  </section>
+  
+  <section id="value-props" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 text-center">
+          <div class="inline-flex items-center justify-center bg-indigo-100 w-16 h-16 rounded-full mb-6">
+            <i class="fa-solid fa-glasses text-2xl text-indigo-800"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Designer Frames</h3>
+          <p class="text-gray-600">Exclusive collection of premium designer frames from around the world to match your unique style.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 text-center">
+          <div class="inline-flex items-center justify-center bg-indigo-100 w-16 h-16 rounded-full mb-6">
+            <i class="fa-solid fa-user-doctor text-2xl text-indigo-800"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Expert Eye Care</h3>
+          <p class="text-gray-600">Our certified optometrists use advanced technology to provide comprehensive eye examinations.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-8 rounded-xl shadow-sm hover:shadow-md transition duration-300 text-center">
+          <div class="inline-flex items-center justify-center bg-indigo-100 w-16 h-16 rounded-full mb-6">
+            <i class="fa-solid fa-hand-holding-heart text-2xl text-indigo-800"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3 text-gray-800">Personalized Service</h3>
+          <p class="text-gray-600">Customized fitting and styling advice to ensure your eyewear perfectly suits your face and lifestyle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="about-preview" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-24 h-24 bg-amber-500/20 rounded-lg"></div>
+            <div class="relative overflow-hidden rounded-xl">
+              <img class="w-full h-auto rounded-xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/6922f03584-62278fe29e85536f26be.png" alt="professional optometrist examining patient" />
+            </div>
+            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-indigo-500/20 rounded-lg"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6 text-gray-800">Toronto's Premier Optical Destination</h2>
+          <p class="text-gray-600 mb-6 leading-relaxed">Since 2005, 416 Optical has been providing exceptional eye care services and premium eyewear to the Toronto community. Our team of experienced optometrists and style consultants are dedicated to helping you find the perfect frames while ensuring optimal eye health.</p>
+          <p class="text-gray-600 mb-8 leading-relaxed">We believe that eyewear is not just a medical necessity but also a fashion statement that reflects your personality and enhances your appearance.</p>
+          <span class="inline-flex items-center text-indigo-800 font-medium hover:text-indigo-600 transition duration-300 cursor-pointer">
+            Learn more about us <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section id="featured-products" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Collections</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explore our curated selection of premium frames from world-renowned designers</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div id="product-1" class="group">
+          <div class="relative overflow-hidden rounded-xl mb-4">
+            <img class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d9206c9dae-a09eb207e6de2e32f80d.png" alt="elegant designer eyeglasses with thin gold frames on white background, product photography" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300"></div>
+            <div class="absolute top-4 right-4 bg-white/90 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full">New Arrival</div>
+          </div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Elegance Collection</h3>
+          <p class="text-gray-500 mb-3">Ray-Ban</p>
+          <div class="flex justify-between items-center">
+            <span class="text-indigo-800 font-medium">$249.00</span>
+            <span class="text-sm text-indigo-800 hover:text-indigo-600 transition duration-300 cursor-pointer">View Details</span>
+          </div>
+        </div>
+        
+        <div id="product-2" class="group">
+          <div class="relative overflow-hidden rounded-xl mb-4">
+            <img class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/249971c96e-582f52acadbecca7eaa5.png" alt="modern circular eyeglasses with thin black frames on neutral background, product photography" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300"></div>
+          </div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Urban Round</h3>
+          <p class="text-gray-500 mb-3">Tom Ford</p>
+          <div class="flex justify-between items-center">
+            <span class="text-indigo-800 font-medium">$329.00</span>
+            <span class="text-sm text-indigo-800 hover:text-indigo-600 transition duration-300 cursor-pointer">View Details</span>
+          </div>
+        </div>
+        
+        <div id="product-3" class="group">
+          <div class="relative overflow-hidden rounded-xl mb-4">
+            <img class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c3c546595a-ac6d9c98949c991e5e24.png" alt="luxury designer sunglasses with tortoise shell frames on minimal background, product photography" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300"></div>
+            <div class="absolute top-4 right-4 bg-amber-500/90 text-white text-xs font-bold px-3 py-1 rounded-full">Best Seller</div>
+          </div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Tortoise Collection</h3>
+          <p class="text-gray-500 mb-3">Prada</p>
+          <div class="flex justify-between items-center">
+            <span class="text-indigo-800 font-medium">$399.00</span>
+            <span class="text-sm text-indigo-800 hover:text-indigo-600 transition duration-300 cursor-pointer">View Details</span>
+          </div>
+        </div>
+        
+        <div id="product-4" class="group">
+          <div class="relative overflow-hidden rounded-xl mb-4">
+            <img class="w-full h-80 object-cover transition duration-500 group-hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/db5c77a8c4-bc513c252406cb27108e.png" alt="premium cat-eye glasses with crystal details on light background, product photography" />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition duration-300"></div>
+          </div>
+          <h3 class="text-lg font-medium text-gray-800 mb-1">Crystal Cat-Eye</h3>
+          <p class="text-gray-500 mb-3">Gucci</p>
+          <div class="flex justify-between items-center">
+            <span class="text-indigo-800 font-medium">$459.00</span>
+            <span class="text-sm text-indigo-800 hover:text-indigo-600 transition duration-300 cursor-pointer">View Details</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <span class="inline-block bg-indigo-800 hover:bg-indigo-700 text-white px-8 py-3 rounded-full transition duration-300 cursor-pointer">
+          View All Collections
+        </span>
+      </div>
+    </div>
+  </section> -->
+  
+  <section id="services" class="py-20 bg-indigo-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Our Services</h2>
+        <p class="max-w-2xl mx-auto text-indigo-100">Comprehensive eye care services delivered by our team of experienced professionals</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="service-1" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-eye text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Comprehensive Eye Exams</h3>
+          <p class="text-indigo-100 mb-6">Our thorough eye examinations assess your vision and detect potential eye health issues using advanced diagnostic technology.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+        </a>
+        </div>
+        
+        <div id="service-2" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-ruler-combined text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Frame Styling & Fitting</h3>
+          <p class="text-indigo-100 mb-6">Our style consultants help you find the perfect frames that complement your face shape, personal style, and lifestyle needs.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+          </a>
+        </div>
+        
+        <div id="service-3" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-glasses text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Lens Consultation</h3>
+          <p class="text-indigo-100 mb-6">We offer expert advice on selecting the best lens materials, coatings, and technologies to match your prescription and needs.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+          </a>
+
+        </div>
+        
+        <div id="service-4" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-circle-nodes text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Contact Lens Fitting</h3>
+          
+          <p class="text-indigo-100 mb-6">Get professionally fitted contact lenses and comprehensive training on proper handling, insertion, and care procedures.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+          </a>
+        </div>
+        
+        <div id="service-5" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-screwdriver-wrench text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Adjustments & Repairs</h3>
+          <p class="text-indigo-100 mb-6">Keep your eyewear in perfect condition with our professional adjustment, cleaning, and repair services.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+          </a>
+        </div>
+        
+        <div id="service-6" class="bg-indigo-800/50 rounded-xl p-8 hover:bg-indigo-800 transition duration-300">
+          <div class="bg-amber-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+            <i class="fa-solid fa-shield-heart text-2xl text-amber-500"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Eye Disease Management</h3>
+          <p class="text-indigo-100 mb-6">We provide ongoing care and management for various eye conditions, including glaucoma, macular degeneration, and dry eye.</p>
+          <a href="{% url 'main:services'%}">
+          <span class="flex items-center text-amber-400 hover:text-amber-300 transition duration-300 cursor-pointer">
+            Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <section id="gallery-preview" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Gallery</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explore our store, events, and happy customers with their perfect eyewear</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="relative group overflow-hidden rounded-xl">
+          <img class="w-full h-60 object-cover transition duration-500 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/65f073acba-3f7b47d43e4b9797d42c.png" alt="modern optical store interior with stylish displays and lighting" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+            <div class="p-4">
+              <h4 class="text-white font-medium">Our Store</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative group overflow-hidden rounded-xl">
+          <img class="w-full h-60 object-cover transition duration-500 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/257d02cac0-3032ec805240a0adfcf2.png" alt="optician helping customer try on designer glasses in a modern optical shop" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+            <div class="p-4">
+              <h4 class="text-white font-medium">Frame Fitting</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative group overflow-hidden rounded-xl">
+          <img class="w-full h-60 object-cover transition duration-500 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/c6aad54735-5a94cfce8a9b566bca99.png" alt="display of luxury designer eyewear frames in an upscale optical store" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+            <div class="p-4">
+              <h4 class="text-white font-medium">Collections</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative group overflow-hidden rounded-xl">
+          <img class="w-full h-60 object-cover transition duration-500 group-hover:scale-110" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ded14f811f-3abc36ef46c7587c75a9.png" alt="happy customer wearing new stylish glasses at an optical store" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
+            <div class="p-4">
+              <h4 class="text-white font-medium">Happy Customers</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <span class="inline-block border-2 border-indigo-800 text-indigo-800 hover:bg-indigo-800 hover:text-white px-8 py-3 rounded-full transition duration-300 cursor-pointer">
+          View Full Gallery
+        </span>
+      </div>
+    </div>
+  </section> -->
+  
+  <section id="testimonials" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied customers about their experience with 416 Optical</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div id="testimonial-1" class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Customer" class="w-14 h-14 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-gray-800">Michael Thompson</h4>
+              <div class="flex text-amber-400 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"The team at 416 Optical provided exceptional service. They helped me find the perfect frames that fit my style and budget. The eye exam was thorough and the doctor explained everything clearly."</p>
+        </div>
+        
+        <div id="testimonial-2" class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Customer" class="w-14 h-14 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-gray-800">Sarah Williams</h4>
+              <div class="flex text-amber-400 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"I've been coming to 416 Optical for years and have always received top-notch care. Their selection of designer frames is amazing, and the staff is knowledgeable and friendly. Highly recommend!"</p>
+        </div>
+        
+        <div id="testimonial-3" class="bg-white p-8 rounded-xl shadow-sm">
+          <div class="flex items-center mb-4">
+            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Customer" class="w-14 h-14 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-gray-800">David Chen</h4>
+              <div class="flex text-amber-400 mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"As someone who wears both glasses and contacts, I appreciate the comprehensive care I receive at 416 Optical. The contact lens fitting was precise, and they took the time to ensure I was comfortable with insertion and removal."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  
+  <section id="blog-preview" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Latest Articles</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Stay informed with the latest eye care tips and eyewear trends</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div id="blog-1" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+          <div class="overflow-hidden">
+            <img class="w-full h-48 object-cover transition duration-500 hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/53b1c76250-d96cc337235406dc21b4.png" alt="person trying on trendy eyeglasses in modern optical shop" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-gray-500 text-sm mb-2">
+              <i class="fa-regular fa-calendar mr-2"></i> April 15, 2025
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">How to Choose the Perfect Frames for Your Face Shape</h3>
+            <p class="text-gray-600 mb-4">Discover the key factors to consider when selecting eyewear that complements your unique facial features.</p>
+            <span class="text-indigo-800 hover:text-indigo-600 font-medium transition duration-300 cursor-pointer">
+              Read More
+            </span>
+          </div>
+        </div>
+        
+        <div id="blog-2" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+          <div class="overflow-hidden">
+            <img class="w-full h-48 object-cover transition duration-500 hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1818be87e8-b02e29a9ea8e22ebd73f.png" alt="close up of blue light blocking glasses next to computer screen" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-gray-500 text-sm mb-2">
+              <i class="fa-regular fa-calendar mr-2"></i> March 28, 2025
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">The Benefits of Blue Light Filtering Lenses</h3>
+            <p class="text-gray-600 mb-4">Learn how specialized lenses can help reduce eye strain and improve sleep quality in our digital world.</p>
+            <span class="text-indigo-800 hover:text-indigo-600 font-medium transition duration-300 cursor-pointer">
+              Read More
+            </span>
+          </div>
+        </div>
+        
+        <div id="blog-3" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+          <div class="overflow-hidden">
+            <img class="w-full h-48 object-cover transition duration-500 hover:scale-105" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/483f328640-4f926017e6164d06e4dc.png" alt="eye doctor examining patient" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center text-gray-500 text-sm mb-2">
+              <i class="fa-regular fa-calendar mr-2"></i> March 10, 2025
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Why Annual Eye Exams Are Essential for Your Health</h3>
+            <p class="text-gray-600 mb-4">Regular eye examinations can detect not only vision problems but also early signs of serious health conditions.</p>
+            <span class="text-indigo-800 hover:text-indigo-600 font-medium transition duration-300 cursor-pointer">
+              Read More
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-10">
+        <span class="inline-block border-2 border-indigo-800 text-indigo-800 hover:bg-indigo-800 hover:text-white px-8 py-3 rounded-full transition duration-300 cursor-pointer">
+          View All Articles
+        </span>
+      </div>
+    </div>
+  </section>
+  
+  <section id="booking" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="bg-indigo-900 rounded-2xl overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 p-10 md:p-16">
+            <h2 class="text-3xl font-bold text-white mb-6">Book Your Appointment</h2>
+            <p class="text-indigo-100 mb-8">Schedule your eye exam or consultation with our experienced optometrists. We're here to help you maintain optimal eye health and find your perfect eyewear.</p>
+            
+            {% if messages %}
+            {% for message in messages %}
+            <div class="{% if message.tags == 'success' %}bg-green-100 border-l-4 border-green-500 text-green-700{% elif message.tags == 'error' %}bg-red-100 border-l-4 border-red-500 text-red-700{% else %}bg-blue-100 border-l-4 border-blue-500 text-blue-700{% endif %} p-4 mb-6 rounded shadow-sm">
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+            
+            <form class="space-y-6" method="post" action="{% url 'main:book_appointment' %}">
+              {% csrf_token %}
+              <div class="space-y-4">
+                <div>
+                  <label for="name" class="block text-indigo-100 mb-2">Full Name</label>
+                  <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your name" required>
+                </div>
+                
+                <div>
+                  <label for="email" class="block text-indigo-100 mb-2">Email Address</label>
+                  <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your email" required>
+                </div>
+                
+                <div>
+                  <label for="phone" class="block text-indigo-100 mb-2">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your phone number" required>
+                </div>
+                
+                <div>
+                  <label for="service" class="block text-indigo-100 mb-2">Service</label>
+                  <select id="service" name="service" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    <option value="Eye Examination">Eye Examination</option>
+                    <option value="Contact Lens Fitting">Contact Lens Fitting</option>
+                    <option value="Frame Styling">Frame Styling</option>
+                    <option value="Eyewear Adjustment">Eyewear Adjustment</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label for="date" class="block text-indigo-100 mb-2">Preferred Date</label>
+                  <input type="date" id="date" name="date" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                </div>
+                
+                <div>
+                  <label for="message" class="block text-indigo-100 mb-2">Additional Information</label>
+                  <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-indigo-800/50 border border-indigo-700 text-white placeholder-indigo-300 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Tell us about any specific concerns or requirements"></textarea>
+                </div>
+              </div>
+              
+              <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-white font-medium py-3 rounded-lg transition duration-300 transform hover:scale-[1.02]">
+                Book Appointment
+              </button>
+            </form>
+          </div>
+          
+          <div class="md:w-1/2 relative">
+            <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/65f073acba-3032dc6ed2fac6a30cc4.png" alt="modern optical store interior with elegant reception desk and waiting area" />
+            <div class="absolute inset-0 bg-indigo-900/30"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-indigo-900 to-transparent">
+              <div class="flex items-center mb-4">
+                <div class="bg-white/10 p-3 rounded-full mr-4">
+                  <i class="fa-solid fa-location-dot text-amber-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold">Visit Our Store</h4>
+                  <p class="text-indigo-100">416 Eye Street, Toronto, ON M5V 2L7</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center mb-4">
+                <div class="bg-white/10 p-3 rounded-full mr-4">
+                  <i class="fa-solid fa-phone text-amber-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold">Call Us</h4>
+                  <p class="text-indigo-100">(416) 555-1234</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="bg-white/10 p-3 rounded-full mr-4">
+                  <i class="fa-solid fa-clock text-amber-400 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-white font-bold">Opening Hours</h4>
+                  <p class="text-indigo-100">Mon-Fri: 9am-6pm | Sat: 10am-4pm | Sun: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="cta" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Experience Premium Eye Care?</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-10">Join thousands of satisfied customers who trust 416 Optical for their vision needs. Book your appointment today!</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#booking" >
+        <span class="bg-indigo-800 hover:bg-indigo-700 text-white px-8 py-3 rounded-full transition duration-300 transform hover:scale-105 cursor-pointer">
+          Book Your Eye Exam
+        </span>
+    </a>
+    
+      </div>
+    </div>
+  </section>
+  
+  <div id="map" class="h-[400px] w-full bg-gray-200">
+    <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/58c6dd5481-c89a090004b82fae5468.png" alt="map of Toronto downtown with location pin, stylized map view" />
+  </div>
+  
+  
+
+{% endblock %}

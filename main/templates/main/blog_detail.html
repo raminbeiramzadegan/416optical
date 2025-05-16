@@ -1,0 +1,150 @@
+{% extends "includes/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ post.title }} - 416 Optical
+{% endblock title %}
+
+{% block content %}
+<div class="min-h-screen bg-white">
+  <!-- Article Header -->
+  <section id="article-header" class="relative h-[500px] overflow-hidden">
+    <div class="absolute inset-0">
+      <img class="w-full h-full object-cover" src="{{ post.image.url }}" alt="{{ post.title }}" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+    </div>
+    <div class="container mx-auto px-4 h-full flex items-end pb-16 relative z-10">
+      <div class="max-w-3xl">
+        <span class="px-4 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">{{ post.category.name }}</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">{{ post.title }}</h1>
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-4">
+            {% if post.author.profile_image %}
+            <img src="{{ post.author.profile_image.url }}" alt="{{ post.author.name }}" class="w-12 h-12 rounded-full">
+            {% else %}
+            <div class="w-12 h-12 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-800 font-bold">
+              {{ post.author.name|slice:":1" }}
+            </div>
+            {% endif %}
+            <div>
+              <p class="font-medium text-white">{{ post.author.name }}</p>
+              <p class="text-gray-300">{{ post.author.bio|truncatechars:20|default:"Author" }}</p>
+            </div>
+          </div>
+          <div class="text-gray-300">
+            <p>{{ post.published_date|date:"F j, Y" }}</p>
+            <p>{{ post.read_time }} min read</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section id="article-content" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-8">
+          <article class="prose lg:prose-lg max-w-none">
+            {{ post.content|safe }}
+          </article>
+
+          <!-- Share Section -->
+          <div class="border-t border-gray-200 mt-12 pt-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Share this article</h3>
+            <div class="flex gap-4">
+              <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank" class="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" target="_blank" class="p-3 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title }}" target="_blank" class="p-3 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://pinterest.com/pin/create/button/?url={{ request.build_absolute_uri }}&media={{ post.image.url }}&description={{ post.title }}" target="_blank" class="p-3 bg-red-600 text-white rounded-full hover:bg-red-700 transition">
+                <i class="fa-brands fa-pinterest-p"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Author Bio -->
+          <div class="bg-gray-50 p-8 rounded-2xl mt-12">
+            <div class="flex items-center gap-6">
+              {% if post.author.profile_image %}
+              <img src="{{ post.author.profile_image.url }}" alt="{{ post.author.name }}" class="w-20 h-20 rounded-full">
+              {% else %}
+              <div class="w-20 h-20 rounded-full bg-indigo-200 flex items-center justify-center text-indigo-800 font-bold text-xl">
+                {{ post.author.name|slice:":1" }}
+              </div>
+              {% endif %}
+              <div>
+                <h3 class="text-xl font-bold text-gray-900">{{ post.author.name }}</h3>
+                <p class="text-gray-600">{{ post.author.bio|default:"Fashion Editor at 416 Optical" }}</p>
+                {% if post.author.bio %}
+                <p class="text-gray-600 mt-2">{{ post.author.bio }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4">
+          <!-- Search -->
+          <div class="bg-gray-50 p-6 rounded-2xl mb-8">
+            <form class="relative" action="{% url 'main:blog_list' %}" method="get">
+              <input type="search" name="q" placeholder="Search articles..." class="w-full px-4 py-3 pr-12 rounded-lg border border-gray-200 focus:outline-none focus:border-indigo-500">
+              <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-indigo-600">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+
+          <!-- Related Articles -->
+          <div class="bg-gray-50 p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Related Articles</h3>
+            <div class="space-y-6">
+              {% for related in recent_posts %}
+              <div class="flex gap-4">
+                <img src="{{ related.image.url }}" alt="{{ related.title }}" class="w-24 h-24 rounded-lg object-cover">
+                <div>
+                  <a href="{% url 'main:blog_detail' related.slug %}" class="font-medium text-gray-900 hover:text-indigo-800 transition">{{ related.title }}</a>
+                  <p class="text-sm text-gray-500 mt-1">{{ related.published_date|date:"F j, Y" }}</p>
+                </div>
+              </div>
+              {% empty %}
+              <p class="text-gray-600">No related articles found.</p>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="mt-8 bg-gray-50 p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Categories</h3>
+            <div class="space-y-2">
+              {% for cat in categories %}
+              <a href="{% url 'main:blog_category' cat.slug %}" class="block w-full text-left px-4 py-2 rounded-lg {% if post.category == cat %}bg-indigo-950 text-white{% else %}hover:bg-gray-200 text-gray-700{% endif %} transition">
+                {{ cat.name }} ({{ cat.blogpost_set.count }})
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="mt-8 bg-indigo-950 p-6 rounded-2xl text-white">
+            <h3 class="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+            <p class="text-white/80 mb-6">Get the latest articles and trends directly in your inbox.</p>
+            <form class="space-y-4" method="post" action="{% url 'main:newsletter_signup' %}">
+              {% csrf_token %}
+              <input type="email" name="email" placeholder="Enter your email" class="w-full bg-white px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white text-gray-900" required>
+              <button type="submit" class="w-full py-3 bg-white text-indigo-950 rounded-lg hover:bg-gray-100 transition">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

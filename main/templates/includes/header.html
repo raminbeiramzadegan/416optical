@@ -1,0 +1,60 @@
+<div id="header" class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <span class="font-bold text-2xl text-indigo-800 cursor-pointer">416<span class="text-amber-500">Optical</span></span>
+        </div>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:home' %}">Home</a></span>
+          <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:about-us' %}">About</a></span>
+          <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:services' %}">Services</a></span>
+          <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:blog_list' %}">Blog</a></span>
+          <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:contact' %}">Contact</a></span>
+        </div>
+        
+        <div class="flex items-center space-x-4">
+            <a href="{% url 'main:home' %}#booking">
+          <span class="hidden md:inline-block bg-indigo-800 hover:bg-indigo-700 text-white px-5 py-2 rounded-full transition duration-300 transform hover:scale-105 cursor-pointer">
+            Book Appointment
+          </span>
+          </a>
+          <button id="search-button" class="text-gray-700 hover:text-indigo-800 transition duration-300">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div id="search-overlay" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+            <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-md">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Search</h3>
+                <button id="close-search" class="text-gray-500 hover:text-gray-700">
+                  <i class="fa-solid fa-times"></i>
+                </button>
+              </div>
+              <form action="{% url 'main:blog_list' %}" method="get">
+                <div class="relative">
+                  <input type="search" name="q" placeholder="Search articles..." class="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                  <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-indigo-600">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <script>
+            document.getElementById('search-button').addEventListener('click', function() {
+              document.getElementById('search-overlay').classList.remove('hidden');
+              document.getElementById('search-overlay').classList.add('flex');
+            });
+            
+            document.getElementById('close-search').addEventListener('click', function() {
+              document.getElementById('search-overlay').classList.add('hidden');
+              document.getElementById('search-overlay').classList.remove('flex');
+            });
+          </script>
+          <button class="lg:hidden text-gray-700 hover:text-indigo-800 transition duration-300">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

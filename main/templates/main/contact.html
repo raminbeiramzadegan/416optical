@@ -1,0 +1,154 @@
+{% extends "includes/base.html" %}
+{% load static %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block content %}
+    <!-- Contact Page -->
+
+    <!-- Hero Section -->
+    <section id="contact-hero" class="relative h-[400px] overflow-hidden">
+      <div class="absolute inset-0">
+        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/65f073acba-0a86aa4dc59467a55757.png" alt="modern optical store interior with reception desk, luxury finishes, warm lighting" />
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-950/90 to-black/70"></div>
+      </div>
+      <div class="container mx-auto px-4 h-full flex items-center relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Get in Touch</h1>
+          <p class="text-xl text-white/90">We're here to help with all your eye care needs</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Contact Information -->
+    <section id="contact-info" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <!-- Contact Form -->
+          <div id="contact-form" class="bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="{% if message.tags == 'success' %}bg-green-100 border-l-4 border-green-500 text-green-700{% elif message.tags == 'error' %}bg-red-100 border-l-4 border-red-500 text-red-700{% else %}bg-blue-100 border-l-4 border-blue-500 text-blue-700{% endif %} p-4 mb-6 rounded shadow-sm">
+                <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+            
+            <form class="space-y-6" method="post" action="{% url 'main:contact' %}">
+              {% csrf_token %}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="relative">
+                  <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Your Name" required>
+                </div>
+                <div class="relative">
+                  <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Email Address" required>
+                </div>
+              </div>
+              <div class="relative">
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Phone Number">
+              </div>
+              <div class="relative">
+                <select id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" required>
+                  <option value="">Select Subject</option>
+                  <option value="appointment">Book Appointment</option>
+                  <option value="inquiry">General Inquiry</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+              <div class="relative">
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="w-full py-4 bg-indigo-950 text-white rounded-full hover:bg-indigo-900 transition duration-300">Send Message</button>
+            </form>
+          </div>
+  
+          <!-- Contact Details -->
+          <div id="contact-details" class="space-y-12">
+            <div class="bg-gray-50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Visit Our Store</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fa-solid fa-location-dot text-indigo-800 mt-1 mr-4"></i>
+                  <div>
+                    <p class="font-medium text-gray-900">416 Optical</p>
+                    <p class="text-gray-600">123 Vision Street</p>
+                    <p class="text-gray-600">Toronto, ON M5V 2T6</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fa-solid fa-phone text-indigo-800 mt-1 mr-4"></i>
+                  <div>
+                    <p class="font-medium text-gray-900">Phone</p>
+                    <p class="text-gray-600">(416) 555-0123</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fa-solid fa-envelope text-indigo-800 mt-1 mr-4"></i>
+                  <div>
+                    <p class="font-medium text-gray-900">Email</p>
+                    <p class="text-gray-600">info@416optical.ca</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="bg-gray-50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Business Hours</h3>
+              <div class="space-y-3">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Monday - Friday</span>
+                  <span class="font-medium text-gray-900">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Saturday</span>
+                  <span class="font-medium text-gray-900">10:00 AM - 4:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Sunday</span>
+                  <span class="font-medium text-gray-900">Closed</span>
+                </div>
+              </div>
+            </div>
+  
+            <div class="bg-gray-50 rounded-2xl p-8">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">Connect With Us</h3>
+              <div class="flex space-x-4">
+                <span class="w-12 h-12 bg-indigo-950 text-white rounded-full flex items-center justify-center hover:bg-indigo-900 transition duration-300 cursor-pointer">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </span>
+                <span class="w-12 h-12 bg-indigo-950 text-white rounded-full flex items-center justify-center hover:bg-indigo-900 transition duration-300 cursor-pointer">
+                  <i class="fa-brands fa-instagram"></i>
+                </span>
+                <span class="w-12 h-12 bg-indigo-950 text-white rounded-full flex items-center justify-center hover:bg-indigo-900 transition duration-300 cursor-pointer">
+                  <i class="fa-brands fa-twitter"></i>
+                </span>
+                <span class="w-12 h-12 bg-indigo-950 text-white rounded-full flex items-center justify-center hover:bg-indigo-900 transition duration-300 cursor-pointer">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Map Section -->
+    <section id="map-section" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="rounded-2xl overflow-hidden shadow-lg h-[400px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2688!2d-79.3870!3d43.6529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM5JzEwLjQiTiA3OcKwMjMnMTMuMiJX!5e0!3m2!1sen!2sca!4v1625161234567!5m2!1sen!2sca"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  
+  {% endblock %}
