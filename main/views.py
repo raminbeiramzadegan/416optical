@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.db.models import Count
 from .models import Appointment, Contact, BlogPost, Category, Newsletter, Author
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 
 def home(request):
     return render(request, 'main/home.html')
@@ -80,13 +82,10 @@ def blog_list(request):
     # Get total count for pagination
     total_posts = posts.count()
     
-    # Slice the queryset for pagination
     posts = posts[offset:offset + posts_per_page]
     
-    # Check if this is an AJAX request
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        from django.template.loader import render_to_string
-        from django.http import JsonResponse
+
         
         html = render_to_string('main/includes/blog_cards.html', {'posts': posts})
         
