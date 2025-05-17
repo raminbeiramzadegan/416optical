@@ -5,7 +5,7 @@
           <span class="font-bold text-2xl text-indigo-800 cursor-pointer">416<span class="text-amber-500">Optical</span></span>
         </div>
         
-        <div class="hidden lg:flex items-center space-x-8">
+        <div id="desktop-menu" class="hidden lg:flex items-center space-x-8">
           <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:home' %}">Home</a></span>
           <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:about-us' %}">About</a></span>
           <span class="text-gray-700 hover:text-indigo-800 transition duration-300 cursor-pointer"><a href="{% url 'main:services' %}">Services</a></span>
@@ -40,21 +40,69 @@
               </form>
             </div>
           </div>
-          <script>
-            document.getElementById('search-button').addEventListener('click', function() {
-              document.getElementById('search-overlay').classList.remove('hidden');
-              document.getElementById('search-overlay').classList.add('flex');
-            });
-            
-            document.getElementById('close-search').addEventListener('click', function() {
-              document.getElementById('search-overlay').classList.add('hidden');
-              document.getElementById('search-overlay').classList.remove('flex');
-            });
-          </script>
-          <button class="lg:hidden text-gray-700 hover:text-indigo-800 transition duration-300">
+          <button id="mobile-menu-button" class="lg:hidden text-gray-700 hover:text-indigo-800 transition duration-300 text-xl p-1">
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
     </div>
+    
+    <!-- Mobile menu overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+    
+    <!-- Mobile menu, hidden by default -->
+    <div id="mobile-menu-items" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-8">
+          <span class="font-bold text-xl text-indigo-800">416<span class="text-amber-500">Optical</span></span>
+          <button id="close-mobile-menu" class="text-gray-500 hover:text-gray-700 text-xl">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        
+        <nav class="flex flex-col space-y-6">
+          <a href="{% url 'main:home' %}" class="text-gray-800 hover:text-indigo-800 text-lg font-medium transition duration-300">Home</a>
+          <a href="{% url 'main:about-us' %}" class="text-gray-800 hover:text-indigo-800 text-lg font-medium transition duration-300">About</a>
+          <a href="{% url 'main:services' %}" class="text-gray-800 hover:text-indigo-800 text-lg font-medium transition duration-300">Services</a>
+          <a href="{% url 'main:blog_list' %}" class="text-gray-800 hover:text-indigo-800 text-lg font-medium transition duration-300">Blog</a>
+          <a href="{% url 'main:contact' %}" class="text-gray-800 hover:text-indigo-800 text-lg font-medium transition duration-300">Contact</a>
+          
+          <div class="pt-6 border-t border-gray-200">
+            <a href="{% url 'main:home' %}#booking" class="block w-full py-3 bg-indigo-800 hover:bg-indigo-700 text-white text-center rounded-lg transition duration-300">
+              Book Appointment
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <script>
+      document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu-overlay').classList.remove('hidden');
+        document.getElementById('mobile-menu-items').classList.remove('translate-x-full');
+        document.body.classList.add('overflow-hidden');
+      });
+      
+      document.getElementById('close-mobile-menu').addEventListener('click', function() {
+        document.getElementById('mobile-menu-overlay').classList.add('hidden');
+        document.getElementById('mobile-menu-items').classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+      });
+      
+      document.getElementById('mobile-menu-overlay').addEventListener('click', function() {
+        document.getElementById('mobile-menu-overlay').classList.add('hidden');
+        document.getElementById('mobile-menu-items').classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+      });
+      
+      document.getElementById('search-button').addEventListener('click', function() {
+        document.getElementById('search-overlay').classList.remove('hidden');
+        document.getElementById('search-overlay').classList.add('flex');
+      });
+      
+      document.getElementById('close-search').addEventListener('click', function() {
+        document.getElementById('search-overlay').classList.add('hidden');
+        document.getElementById('search-overlay').classList.remove('flex');
+      });
+    </script>
   </div>

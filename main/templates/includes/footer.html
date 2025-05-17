@@ -38,12 +38,18 @@
           <ul class="space-y-3">
             <li class="flex items-start">
               <i class="fa-solid fa-location-dot mt-1 mr-3 text-amber-400"></i>
-              <span class="text-indigo-100">416 Eye Street, Toronto, ON M5V 2L7</span>
+              <span class="text-indigo-100">unit C3, 66 Overlea Blvd, Toronto, ON M4H 1C4</span>
             </li>
             <li class="flex items-start">
               <i class="fa-solid fa-phone mt-1 mr-3 text-amber-400"></i>
-              <span class="text-indigo-100">(416) 555-1234</span>
+              <span class="text-indigo-100">(416) 901-3535</span>
             </li>
+           
+            <li class="flex items-start">
+                <i class="fa-solid fa-fax mt-1 mr-3 text-amber-400"></i>
+                <span class="text-indigo-100">(416) 901-0709</span>
+              </li>
+              
             <li class="flex items-start">
               <i class="fa-solid fa-envelope mt-1 mr-3 text-amber-400"></i>
               <span class="text-indigo-100">info@416optical.ca</span>
@@ -51,8 +57,8 @@
             <li class="flex items-start">
               <i class="fa-solid fa-clock mt-1 mr-3 text-amber-400"></i>
               <div class="text-indigo-100">
-                <p>Monday-Friday: 9am-6pm</p>
-                <p>Saturday: 10am-4pm</p>
+                <p>Monday-Friday: 10am-8pm</p>
+                <p>Saturday: 10am-2pm</p>
                 <p>Sunday: Closed</p>
               </div>
             </li>
@@ -84,10 +90,12 @@
   </footer>
   
   <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-4">
-    <a href="https://wa.me/14165551234" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-110">
+    <a href="https://wa.me/14169013535" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-110">
       <i class="fa-brands fa-whatsapp text-xl"></i>
     </a>
+    <a href="{% url 'main:home' %}#booking">
     <span class="bg-indigo-800 hover:bg-indigo-700 text-white p-4 rounded-full shadow-lg transition duration-300 transform hover:scale-110 cursor-pointer">
       <i class="fa-solid fa-calendar-check text-xl"></i>
     </span>
+    </a>
   </div>
