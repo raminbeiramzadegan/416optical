@@ -21,19 +21,14 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import include
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("main.urls",namespace="main")),
+    path("", include("main.urls", namespace="main")),
 ]
 
+# Always serve media files regardless of DEBUG setting
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
+# Serve static files based on DEBUG setting
 if settings.DEBUG:
-    urlpatterns = [
-        # Add media and static serving before catch-all
-        *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
-        *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
-        # Your other patterns
-        *urlpatterns
-    ]
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

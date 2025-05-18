@@ -6,7 +6,15 @@ from django.template.loader import render_to_string
 from django.http import JsonResponse
 
 def home(request):
-    return render(request, 'main/home.html')
+    blogs = []
+    try:
+        blogs = BlogPost.objects.all()[:3]
+    except:
+        pass
+        
+    return render(request, 'main/home.html', {
+        'blogs': blogs
+    })
 
 def about_us(request):
     return render(request, 'main/about-us.html')

@@ -44,7 +44,6 @@ class Category(models.Model):
 class Author(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-
     def __str__(self):
         return self.name
     
@@ -55,8 +54,7 @@ class BlogPost(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     content = RichTextField(blank=True, null=True)
     excerpt = RichTextField(blank=True, null=True)
-    image = models.ImageField(upload_to='blog_images/')
-
+    image = models.ImageField(upload_to='blog_images/', null=True, blank=True)
     is_featured = models.BooleanField(default=False)
     read_time = models.IntegerField(default=5)  # in minutes
     published_date = models.DateTimeField(auto_now_add=True)

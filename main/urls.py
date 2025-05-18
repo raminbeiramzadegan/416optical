@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+handler404 = 'main.views.handler404'
 
 app_name = 'main'
 urlpatterns = [
