@@ -1,11 +1,11 @@
 {% for post in posts %}
 <article class="bg-white rounded-2xl overflow-hidden shadow-lg transition hover:shadow-xl">
   <div class="h-[240px] overflow-hidden">
-    <img class="w-full h-full object-cover" src="{{ post.image.url }}" alt="{{ post.title }}" />
+    <a href="{% url 'main:blog_detail' post.slug %}"><img class="w-full h-full object-cover" src="{{ post.image.url }}" alt="{{ post.title }}" /></a>
   </div>
   <div class="p-6">
     <span class="px-3 py-1 bg-{{ post.category.slug|default:'blue' }}-100 text-{{ post.category.slug|default:'blue' }}-800 rounded-full text-sm">{{ post.category.name }}</span>
-    <h3 class="text-xl font-bold mt-4 mb-2">{{ post.title|truncatechars:25 }}</h3>
+    <a href="{% url 'main:blog_detail' post.slug %}"> <h3 class="text-xl font-bold mt-4 mb-2">{{ post.title|truncatechars:25 }}</h3></a>
     <p class="text-gray-600 mb-4">{{ post.excerpt|safe|truncatechars:100 }}</p>
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">

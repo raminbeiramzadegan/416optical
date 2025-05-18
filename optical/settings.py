@@ -13,7 +13,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', "django-insecure-@zj$v!s=57he!_r-^a3p=(j125(tmn63w69^96q$q5bojq1oz_")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'False') != 'False'
+# DEBUG = os.environ.get('DEBUG', 'False') != 'False'
+DEBUG=True
+
+if DEBUG:
+    STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+else:
+    # Use a simpler storage option
+    STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'  # Not compressed
+
+
 
 # Security settings for production
 if not DEBUG:
