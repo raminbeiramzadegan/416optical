@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>{% block title %}{% endblock %} | 416 Optical - Toronto's Premier Eye Care</title>
-    <meta name="description" content="{% block meta_description %}416 Optical offers premium eye care services and designer eyewear in Toronto. Book your eye exam today at our Overlea Blvd location.{% endblock %}">
-    <meta name="keywords" content="{% block meta_keywords %}eye care, optometrist, eyeglasses, contact lenses, eye exam, Toronto, Overlea Blvd{% endblock %}">
+    <title>{% block title %}{% endblock %} | Toronto Optical and Vision Clinic - Toronto's Premier Eye Care</title>
+    <meta name="description" content="{% block meta_description %}Toronto Optical and Vision Clinic offers premium eye care services and designer eyewear in Toronto. Book your eye exam today at our Overlea Blvd location.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}eye care, optometrist, eyeglasses, contact lenses, eye exam, Toronto, Overlea Blvd, Toronto Optical and Vision Clinic{% endblock %}">
     <meta name="author" content="416 Optical">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
@@ -48,7 +48,7 @@
       "telephone": "+14169013535",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Unit C3, 66 Overlea Blvd",
+        "streetAddress": "66 Overlea Blvd, Unit C3",
         "addressLocality": "Toronto",
         "addressRegion": "ON",
         "postalCode": "M4H 1C4",
@@ -110,6 +110,36 @@
         plugins: [],
       };
 </script>
+<style>
+    html {
+      overflow-y: scroll;
+    }
+    
+    /* For Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
+    
+    /* For Chrome, Safari, and Opera */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+  
 </head>
 <body>
 
@@ -134,6 +164,7 @@
                 });
             });
         });
+
     </script>
 
 </body>

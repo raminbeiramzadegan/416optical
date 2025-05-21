@@ -81,7 +81,7 @@
         </div>
         <div class="md:w-1/2">
           <h2 class="text-3xl font-bold mb-6 text-gray-800">Toronto's Premier Optical Destination</h2>
-          <p class="text-gray-600 mb-6 leading-relaxed">Since 2005, 416 Optical has been providing exceptional eye care services and premium eyewear to the Toronto community. Our team of experienced optometrists and style consultants are dedicated to helping you find the perfect frames while ensuring optimal eye health.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">Founded in 2018, Toronto Optical and Vision Clinic has proudly served the communities of East York, Thorncliffe Park, Flemingdon Park, and Leaside, delivering high-quality eye care with a personal touch..</p>
           <p class="text-gray-600 mb-8 leading-relaxed">We believe that eyewear is not just a medical necessity but also a fashion statement that reflects your personality and enhances your appearance.</p>
           <span class="inline-flex items-center text-indigo-800 font-medium hover:text-indigo-600 transition duration-300 cursor-pointer">
             Learn more about us <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -381,7 +381,7 @@
   {% for blog in blogs %}
         <div id="blog-1" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300">
           <div class="overflow-hidden">
-            {% if blog.image or blog.image.url %}
+            {% if blog.image %}
             <img class="w-full h-48 object-cover transition duration-500 hover:scale-105" src="{{ blog.image.url }}" alt="{{ blog.title }}"/>
           
             {% else %}
